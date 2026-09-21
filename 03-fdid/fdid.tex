@@ -72,15 +72,6 @@
 \end{tikzpicture}}
 \newcommand{\pre}{\mathrm{pre}}
 
-% ---------- paper cards for the "More Examples" frames (deck-local) ----------
-% \papercard{width}{authors and year}{venue}{title}{one-line design}
-\newcommand{\papercard}[5]{%
-\begin{tikzpicture}
-\node[draw=SlideRed, thick, rounded corners=3pt, fill=SlideMist, inner sep=8pt, text width=#1, align=left] {%
-  {\small\textbf{#4}}\\[0.45em]
-  {\footnotesize #2. \emph{#3}.}\\[0.6em]
-  {\footnotesize\color{SlideInk}#5}};
-\end{tikzpicture}}
 \newcommand{\post}{\mathrm{post}}
 
 % ---------- potential-outcome tree (deck-local) ----------
@@ -255,7 +246,7 @@
 \begin{frame}
   \frametitle{More Examples}
 \begin{center}
-\papercard{0.8\textwidth}{Vasiliki Fouka (2019)}{American Political Science Review 113 (2)}{How Do Immigrants Respond to Discrimination? The Case of Germans in the US During World War I}{German immigrants (the baseline factor) meet the wave of anti-German hostility that came with the war (the event); outcomes are naming choices and petitions for naturalization.}
+\includegraphics[width=0.85\textwidth, height=0.66\textheight, keepaspectratio]{c_ex_fouka.pdf}
 \par\medskip{\small\onslide<2->{\alert{Discrimination $\times$ WWI}}}
 \end{center}
 \slidesource{\textcite{fouka2019how}.}
@@ -264,7 +255,7 @@
 \begin{frame}
   \frametitle{More Examples}
 \begin{center}
-\papercard{0.8\textwidth}{Mara P. Squicciarini (2020)}{American Economic Review 110 (11)}{Devotion and Development: Religiosity, Education, and Economic Progress in Nineteenth-Century France}{More and less religious districts (the baseline factor) meet the Second Industrial Revolution's demand for technical schooling (the event); outcomes are education and industrial development.}
+\includegraphics[width=0.85\textwidth, height=0.66\textheight, keepaspectratio]{c_ex_aer.pdf}
 \par\medskip{\small\onslide<2->{\alert{Catholicism $\times$ Industrial Revolution}}}
 \end{center}
 \slidesource{\textcite{squicciarini2020devotion}.}
@@ -275,12 +266,12 @@
 \begin{columns}[b,onlytextwidth]
 \begin{column}{0.48\textwidth}
 \centering
-\papercard{0.92\linewidth}{Joy Chen, Erik H. Wang, and Xiaoming Zhang (2025)}{American Journal of Political Science 69 (2)}{From Powerholders to Stakeholders: State-Building with Elite Compensation in Early Medieval China}{Localities with and without entrenched powerholders meet a state-building reform that reached everyone.}
+\includegraphics[width=\linewidth, height=0.5\textheight, keepaspectratio]{c_ex_ajps.pdf}
 \par\smallskip{\small\onslide<2->{\alert{Elite strongholds $\times$ state-building reform}}}
 \end{column}
 \begin{column}{0.48\textwidth}
 \centering
-\papercard{0.92\linewidth}{Daniel de Kadt and Horacio A. Larreguy (2018)}{Journal of Politics 80 (2)}{Agents of the Regime? Traditional Leaders and Electoral Politics in South Africa}{Areas with and without traditional leaders meet the rise of Jacob Zuma as ANC leader; the outcome is the ANC's vote share.}
+\includegraphics[width=\linewidth, height=0.5\textheight, keepaspectratio]{c_ex_jop.pdf}
 \par\smallskip{\small\onslide<3->{\alert{Traditional leaders $\times$ rise of Zuma}}}
 \end{column}
 \end{columns}
@@ -878,14 +869,14 @@ Causal moderation requires factorial parallel trends.
 \begin{itemize}\itemsep0.5em
 \item \texttt{fdid} (R): factorial DID with the famine application data
 \item \texttt{panelView} (R \& Stata): treatment status and outcome visualization
-\item Tutorials: \url{https://yiqingxu.org/tutorials/panel.html}
+\item Tutorial: \url{https://yiqingxu.org/packages/fdid/}
 \end{itemize}
 \end{frame}
 
 \appendix
 
 \setbeamertemplate{frametitle continuation}[from second][(cont.)]
-\begin{frame}[t,allowframebreaks=1.1]
+\begin{frame}[t,allowframebreaks=1.0]
   \frametitle{References}
   \referencelist
 \end{frame}

@@ -44,10 +44,13 @@
 \usepackage[authordate,backend=biber,doi=false,url=false,isbn=false,eprint=false,
             maxbibnames=10,compresspages=true,dashed=false]{biblatex-chicago}
 \addbibresource{../references.bib}
-\renewcommand*{\bibfont}{\fontsize{6pt}{7.2pt}\selectfont}   % one step below \scriptsize
+% Entry size: beamer wraps each part of a biblatex entry in its "bibliography entry author /
+% title / location / note" fonts, and metropolis sets those to \normalsize, so \bibfont alone
+% does not change the size. The four \setbeamerfont lines in theme.tex set the size that shows.
+\renewcommand*{\bibfont}{\scriptsize}
 \setlength{\bibitemsep}{0.7em}   % visible air between entries
 \setlength{\bibhang}{0.5em}
-% The References frame of every deck: \begin{frame}[t,allowframebreaks=1.1] ... \referencelist.
+% The References frame of every deck: \begin{frame}[t,allowframebreaks=1.0] ... \referencelist.
 % Beamer's automatic break for this list fires at about two thirds of the frame; the factor
 % 1.1 lets it fill the frame. The small negative skip closes the list's top gap.
 \newcommand{\referencelist}{\vspace*{-0.6em}\printbibliography[heading=none]}

@@ -23,6 +23,12 @@
 \setbeamertemplate{items}[circle]
 \setbeamertemplate{blocks}[rounded][shadow=false]
 \setbeamertemplate{bibliography item}{}   % no document icons on the References frames
+% References frames: \scriptsize entries (6pt at the 9pt base); these override metropolis's
+% \normalsize defaults, which would otherwise ignore \bibfont (see preamble.tex).
+\setbeamerfont{bibliography entry author}{size=\scriptsize}
+\setbeamerfont{bibliography entry title}{size=\scriptsize}
+\setbeamerfont{bibliography entry location}{size=\scriptsize}
+\setbeamerfont{bibliography entry note}{size=\scriptsize}
 \setbeamertemplate{frametitle continuation}{}
 \setbeamertemplate{footline}{%
   \leavevmode\hbox{%
@@ -35,3 +41,11 @@
 
 \newcommand{\slidesource}[1]{\vfill{\scriptsize\color{gray}Source: #1}}
 \newcommand{\keyquestion}[1]{\begin{block}{Question}#1\end{block}}
+
+% Title page: reuse note, centered at the bottom in grey. A TikZ overlay, so the metropolis
+% title layout (a full-height minipage) is untouched. Edit the text in \slidelicense.
+\newcommand{\slidelicense}{Feel free to use or adapt the slides with attribution (CC BY 4.0).}
+\addtobeamertemplate{title page}{}{%
+  \begin{tikzpicture}[remember picture, overlay]
+    \node[anchor=south, yshift=7mm, text=gray, font=\scriptsize] at (current page.south) {\slidelicense};
+  \end{tikzpicture}}

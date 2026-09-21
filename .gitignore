@@ -1,5 +1,8 @@
 # LaTeX build artifacts (every deck builds into <deck>/build/)
 build/
+# built PDFs: make -> pdf/handout/, make animated -> pdf/animated/; published to
+# https://yiqingxu.org/public/panel-lectures/ rather than tracked here
+pdf/
 *.aux
 *.log
 *.nav

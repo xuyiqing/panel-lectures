@@ -1,20 +1,23 @@
 # Panel Methods: Six Lectures on Causal Inference with Panel Data
 
 Slides for six 100-120 minute lectures on causal panel analysis: LaTeX Beamer sources,
-figures, the R scripts that regenerate them, one bibliography file, and PDF handouts.
-Version: September 2026.
+figures, the R scripts that regenerate them, and one bibliography file. The rendered PDFs are
+hosted at <https://yiqingxu.org/public/panel-lectures/> (links below). Version: September 2026.
 
 > Status (2026-09-21): private repository. Third-party material that remains in the decks is
 > listed in [SOURCES.md](SOURCES.md), Section 2, with its credit line.
 
-| # | Lecture | Handout | Pages |
+| # | Lecture | Handout | Animated |
 |---|---|---|---|
-| 1 | The Parametric Approach | [`pdf/01-panel.pdf`](pdf/01-panel.pdf) | 52 |
-| 2 | Difference-in-Differences | [`pdf/02-did.pdf`](pdf/02-did.pdf) | 48 |
-| 3 | Factorial Difference-in-Differences | [`pdf/03-fdid.pdf`](pdf/03-fdid.pdf) | 39 |
-| 4 | Two-Way Fixed Effects Revisited | [`pdf/04-twfe.pdf`](pdf/04-twfe.pdf) | 33 |
-| 5 | Modern DID | [`pdf/05-modern.pdf`](pdf/05-modern.pdf) | 48 |
-| 6 | Synthetic Control and Extensions | [`pdf/06-synth.pdf`](pdf/06-synth.pdf) | 54 |
+| 1 | The Parametric Approach | [`Xu_1panel.pdf`](https://yiqingxu.org/public/panel-lectures/handout/Xu_1panel.pdf) (52 pp) | [`Xu_1panel.pdf`](https://yiqingxu.org/public/panel-lectures/animated/Xu_1panel.pdf) (122 pp) |
+| 2 | Difference-in-Differences | [`Xu_2did.pdf`](https://yiqingxu.org/public/panel-lectures/handout/Xu_2did.pdf) (47 pp) | [`Xu_2did.pdf`](https://yiqingxu.org/public/panel-lectures/animated/Xu_2did.pdf) (95 pp) |
+| 3 | Factorial Difference-in-Differences | [`Xu_3fdid.pdf`](https://yiqingxu.org/public/panel-lectures/handout/Xu_3fdid.pdf) (39 pp) | [`Xu_3fdid.pdf`](https://yiqingxu.org/public/panel-lectures/animated/Xu_3fdid.pdf) (120 pp) |
+| 4 | Two-Way Fixed Effects Revisited | [`Xu_4twfe.pdf`](https://yiqingxu.org/public/panel-lectures/handout/Xu_4twfe.pdf) (33 pp) | [`Xu_4twfe.pdf`](https://yiqingxu.org/public/panel-lectures/animated/Xu_4twfe.pdf) (119 pp) |
+| 5 | Modern DID | [`Xu_5modern.pdf`](https://yiqingxu.org/public/panel-lectures/handout/Xu_5modern.pdf) (48 pp) | [`Xu_5modern.pdf`](https://yiqingxu.org/public/panel-lectures/animated/Xu_5modern.pdf) (146 pp) |
+| 6 | Synthetic Control and Extensions | [`Xu_6synth.pdf`](https://yiqingxu.org/public/panel-lectures/handout/Xu_6synth.pdf) (54 pp) | [`Xu_6synth.pdf`](https://yiqingxu.org/public/panel-lectures/animated/Xu_6synth.pdf) (177 pp) |
+
+Handouts have one page per slide. The animated versions have one page per step of the
+reveals, for presenting.
 
 **The arc.** Lectures 1 and 2 cover the parametric panel toolkit and the canonical
 difference-in-differences design. Lecture 3 extends that design to events that affect
@@ -35,15 +38,17 @@ falls back to Computer Modern Sans), `biblatex-chicago`, `csquotes`, `tikz` with
 `changepage`, `booktabs`, and `subcaption`.
 
 ```bash
-make            # the six handouts into pdf/
-make 05         # one deck (01 .. 06)
-make projection # the projection versions with overlays, into <deck>/build/
+make            # the six handouts into pdf/handout/ (Xu_1panel.pdf ... Xu_6synth.pdf)
+make 05         # one deck's handout (01 .. 06)
+make animated   # the versions with the stepped reveals into pdf/animated/
+make 05-modern  # one deck's animated version
 make clean
 ```
 
 Each handout is built from a throwaway copy of the deck source with the beamer `handout`
 class option and `\handout` set to 1 (a few frames pick a different figure in handout
-mode). Build artifacts go to `<deck>/build/`, which git ignores. On macOS, if `biber`
+mode). Build artifacts go to `<deck>/build/` and the PDFs to `pdf/`; git ignores both, and
+the PDFs are published from `pdf/` to the site. On macOS, if `biber`
 prints a `usage: lipo` message instead of running, accept the Xcode license
 (`sudo xcodebuild -license accept`) or leave the Makefile's `DEVELOPER_DIR` line in place.
 
@@ -72,7 +77,7 @@ references.bib   every reference cited in the six decks
 01-panel/        panel.tex and figs/          04-twfe/    twfe.tex and figs/
 02-did/          did.tex and figs/            05-modern/  modern.tex and figs/
 03-fdid/         fdid.tex and figs/           06-synth/   synth.tex, preamble.tex, figs/
-pdf/             the six handouts
+pdf/             built PDFs, handout/ and animated/ (not tracked; published to yiqingxu.org)
 scripts/         check_figures.py (missing or unused figures)
 SOURCES.md       provenance of every figure; data and scripts; what was left out
 ```

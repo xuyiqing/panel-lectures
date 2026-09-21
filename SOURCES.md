@@ -25,8 +25,7 @@ deck's `figs/` folder, from public data or by simulation. Every one is credited 
 
 Typed in LaTeX instead of a scan (numbers are facts; the layout was the publisher's): Gruber
 (1994) Table 3 on the two triple-difference frames of deck 2; Card and Krueger (1994) Table 3,
-rows 1 to 3; Hong (2013) Tables 1 and 8. The four title-page crops on deck 3's "More
-Examples" frames became typed paper cards (title, authors, venue, and one line on the design).
+rows 1 to 3; Hong (2013) Tables 1 and 8.
 
 ## 2. Third-party material still included
 
@@ -34,6 +33,7 @@ Examples" frames became typed paper cards (title, authors, venue, and one line o
 |---|---|---|---|---|
 | 2 | `PreTrend.pdf` | Card and Krueger (2000), Figure 2: employment in eating and drinking places from BLS ES-202 data, New Jersey and Pennsylvania counties | source line | Kept with attribution; the underlying series is not public. |
 | 2 | `Ken.pdf` | Scheve and Stasavage (2010), Figure 1: top marginal income tax rates in World War I participants and non-participants | source line | Kept with attribution; replication data not retrieved. |
+| 3 | `c_ex_fouka.pdf`, `c_ex_aer.pdf`, `c_ex_ajps.pdf`, `c_ex_jop.pdf` | Title-page crops (title, authors, abstract) of Fouka (2019), Squicciarini (2020), Chen, Wang, and Zhang (2025), and de Kadt and Larreguy (2018), on the three "More Examples" frames | source line on each frame | Kept with attribution. |
 | 6 | `sdid1.png`, `sdid2.png`, `sdid3.png`, `sdid4.png` | Schematics and the three-panel California figure from the authors' slides for Arkhangelsky, Athey, Hirshberg, Imbens, and Wager (2021) | source line on each of the four SDID frames | Kept with attribution. |
 | 6 | `benin_smp.png`, `benin_data1.png`, `benin_data2.png`, `benin_2009.png`, `benin_2014.png` | Luke Sanford's Benin land-titling example (working paper, 2019); `benin_data1.png` and `benin_data2.png` carry Google and DigitalGlobe imagery credits | frame cites Sanford (2019) | Used with the author's permission. |
 
