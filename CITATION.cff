@@ -1,12 +1,12 @@
 cff-version: 1.2.0
 message: "If you use or adapt these slides, please cite them as below."
-title: "Panel Methods: Six Lectures on Causal Inference with Panel Data"
+title: "Lectures on Causal Panel Analysis"
 authors:
   - family-names: Xu
     given-names: Yiqing
     affiliation: Stanford University
-version: "2026.09"
-date-released: "2026-09-20"
+version: "1.0.0"
+date-released: "2026-09-21"
 url: "https://github.com/xuyiqing/panel-lectures"
 license: CC-BY-4.0
 keywords:

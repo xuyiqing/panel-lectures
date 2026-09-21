@@ -59,13 +59,15 @@ by Jens Hainmueller (decks 1 and 2).
   `journal2`, and the `setting_*` and `toy_*` drawings.
 - **Deck 6:** `ca1` to `ca8` (own `Synth` output on the Abadie, Diamond, and Hainmueller 2010
   data), `scm_intuition1` to `6` (own drawings), `sim_*`, `toy_*`, `edr_*`, `xu2017_*`,
-  `ex_Xu2017_*` (Xu 2017), `state_capacity.png` (`panelView`).
+  `ex_Xu2017_*` (Xu 2017), `state_capacity.png` (`panelView`); `dag_strict_exogeneity.png` and
+  `dag_factor_augmented.png` (own drawings: Figures 2 and 7 of the author's 2023 chapter in the
+  *Oxford Handbook of Engaged Methodological Pluralism in Political Science*).
 
 ## 4. Data and scripts in the repository
 
 | File | Origin | Used by |
 |---|---|---|
-| `01-panel/figs/Swiss_Panel_long.dta`, `swissnat.dta` | Hainmueller and Hangartner's naturalization data as distributed in Jens Hainmueller's course materials, re-saved with `haven` (the Stata headers carry no path) | `update_panel_examples_2026.R`, `svp_heterogeneity_2026.R` |
+| `01-parametric/figs/Swiss_Panel_long.dta`, `swissnat.dta` | Hainmueller and Hangartner's naturalization data as distributed in Jens Hainmueller's course materials, re-saved with `haven` (the Stata headers carry no path) | `update_panel_examples_2026.R`, `svp_heterogeneity_2026.R` |
 | `02-did/figs/CK1994_longformat.dta` | Card and Krueger (1994) public store data, from the same course materials, re-saved with `haven` | `card_krueger_2026.R`, `did_card_krueger.R` |
 | traffic-fatality panel, divorce panel, smoking panel | loaded from the `AER`, `bacondecomp`, and `tidysynth` R packages; no file in the repository | deck 1, 4, and 6 scripts |
 

@@ -16,7 +16,7 @@ import sys
 from pathlib import Path
 
 REPO = Path(__file__).resolve().parents[1]
-DECKS = ["01-panel", "02-did", "03-fdid", "04-twfe", "05-modern", "06-synth"]
+DECKS = ["01-parametric", "02-did", "03-fdid", "04-twfe", "05-modern", "06-synth"]
 INCLUDE_RE = re.compile(r"\\includegraphics\*?\s*(?:\[[^\]]*\])?\s*\{([^}]*)\}")
 INPUT_RE = re.compile(r"\\input\s*\{(figs/[^}]*)\}")
 IMG_EXTS = (".pdf", ".png", ".jpg", ".jpeg", ".eps")

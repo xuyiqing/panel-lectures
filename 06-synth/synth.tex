@@ -272,6 +272,33 @@ Use outcomes from untreated units to estimate $Y_{1t}(0)$ after treatment.
 
 
 \begin{frame}
+\frametitle{DAG Compatible with Additive Fixed Effects}
+\begin{center}
+\includegraphics[width=0.62\textwidth, height=0.36\textheight, keepaspectratio]{dag_strict_exogeneity.png}
+\end{center}\vspace{-0.3em}
+\begin{itemize}[<+->]\itemsep0.25em
+\item Two unobservables drive both $D_t$ and $Y_t$: a fixed unit trait $\alpha$ and period shocks $f_t$ (here, the time fixed effects)
+\item $\alpha$ shifts a unit by the same amount in every period; $f_t$ shifts every unit by the same amount $\rightarrow$ \blue{parallel trends}; two-way demeaning removes both
+\item No arrow from past outcomes to later treatment: treatment is set in advance (strict exogeneity)
+\end{itemize}
+\slidesource{\textcite{xu2023causal}, Figure 2. Gray: unobserved; dashed arrows: links involving unobservables.}
+\end{frame}
+
+\begin{frame}
+\frametitle{What Synthetic Control Adds: The Same DAG, Augmented by Factors}
+\begin{center}
+\includegraphics[width=0.62\textwidth, height=0.36\textheight, keepaspectratio]{dag_factor_augmented.png}
+\end{center}\vspace{-0.3em}
+\begin{itemize}[<+->]\itemsep0.25em
+\item Now the unobservable is $U_t = \lambda' f_t$: the same fixed trait $\lambda$, but its effect moves with common factors $f_t$
+\item Units with different $\lambda$ respond differently to the same shocks $\rightarrow$ trends need not be parallel; DID fails here
+\item $\lambda$ is fixed and $f_t$ is shared, so pre-treatment outcomes reveal them: \blue{match on them} (synthetic control) or \blue{estimate them} (factor models); TWFE is the special case $U_t = \alpha + f_t$
+\item Still no feedback from past outcomes to treatment: the same regime as DID; only how $U_t$ enters differs
+\end{itemize}
+\slidesource{\textcite{xu2023causal}, Figure 7.}
+\end{frame}
+
+\begin{frame}
 \frametitle{Theoretical Justification}
 \[
 Y_{it} = \tau_{it}D_{it} + \theta_{t}'Z_{i} + \xi_{t} + \red{\lambda_{i}'f_{t}} + \varepsilon_{it}

@@ -1,8 +1,8 @@
 # Panel Methods: six lecture decks.
 #
-#   make            the six handouts into pdf/handout/ (Xu_1panel.pdf ... Xu_6synth.pdf)
+#   make            the six handouts into pdf/handout/ (Xu_1parametric_handout.pdf ... Xu_6synth_handout.pdf)
 #   make 05         one deck's handout (01 .. 06)
-#   make animated   the versions with the stepped reveals into pdf/animated/ (same names)
+#   make animated   the versions with the stepped reveals into pdf/animated/ (Xu_1parametric.pdf ...)
 #   make 05-modern  one deck's animated version
 #   make clean      remove every build/ folder and the temporary handout sources
 #
@@ -19,14 +19,15 @@ ifeq ($(shell uname),Darwin)
 export DEVELOPER_DIR ?= /Library/Developer/CommandLineTools
 endif
 
-DECKS   := 01-panel 02-did 03-fdid 04-twfe 05-modern 06-synth
+DECKS   := 01-parametric 02-did 03-fdid 04-twfe 05-modern 06-synth
 LATEXMK := latexmk -pdf -interaction=nonstopmode -halt-on-error -outdir=build
 
-# 01-panel -> panel (the tex stem) and Xu_1panel (the published name)
+# 01-parametric -> parametric (the tex stem) and Xu_1parametric (the published name;
+# handouts add _handout)
 stem = $(word 2,$(subst -, ,$(1)))
 name = Xu_$(patsubst 0%,%,$(word 1,$(subst -, ,$(1))))$(call stem,$(1))
 
-HANDOUT  := $(foreach d,$(DECKS),pdf/handout/$(call name,$(d)).pdf)
+HANDOUT  := $(foreach d,$(DECKS),pdf/handout/$(call name,$(d))_handout.pdf)
 ANIMATED := $(foreach d,$(DECKS),pdf/animated/$(call name,$(d)).pdf)
 
 .PHONY: all animated projection clean 01 02 03 04 05 06 $(DECKS)
@@ -35,16 +36,16 @@ all: $(HANDOUT)
 animated: $(ANIMATED)
 projection: animated
 
-# make 05 == make pdf/handout/Xu_5modern.pdf
-01: pdf/handout/Xu_1panel.pdf
-02: pdf/handout/Xu_2did.pdf
-03: pdf/handout/Xu_3fdid.pdf
-04: pdf/handout/Xu_4twfe.pdf
-05: pdf/handout/Xu_5modern.pdf
-06: pdf/handout/Xu_6synth.pdf
+# make 05 == make pdf/handout/Xu_5modern_handout.pdf
+01: pdf/handout/Xu_1parametric_handout.pdf
+02: pdf/handout/Xu_2did_handout.pdf
+03: pdf/handout/Xu_3fdid_handout.pdf
+04: pdf/handout/Xu_4twfe_handout.pdf
+05: pdf/handout/Xu_5modern_handout.pdf
+06: pdf/handout/Xu_6synth_handout.pdf
 
 define DECK_RULES
-pdf/handout/$(call name,$(1)).pdf: $(1)/$(call stem,$(1)).tex common/preamble.tex common/theme.tex references.bib $$(wildcard $(1)/figs/*) $$(wildcard $(1)/preamble.tex)
+pdf/handout/$(call name,$(1))_handout.pdf: $(1)/$(call stem,$(1)).tex common/preamble.tex common/theme.tex references.bib $$(wildcard $(1)/figs/*) $$(wildcard $(1)/preamble.tex)
 	@mkdir -p pdf/handout
 	sed -e '/^\\documentclass/s/\]{beamer}/,handout]{beamer}/' \
 	    -e 's/^\\newcommand{\\handout}{0}/\\newcommand{\\handout}{1}/' \

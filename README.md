@@ -1,23 +1,28 @@
-# Panel Methods: Six Lectures on Causal Inference with Panel Data
+# Lectures on Causal Panel Analysis
 
 Slides for six 100-120 minute lectures on causal panel analysis: LaTeX Beamer sources,
 figures, the R scripts that regenerate them, and one bibliography file. The rendered PDFs are
-hosted at <https://yiqingxu.org/public/panel-lectures/> (links below). Version: September 2026.
+hosted at <https://yiqingxu.org/public/panel-lectures/> (links below). Version 1.0.0, September 2026.
 
-> Status (2026-09-21): private repository. Third-party material that remains in the decks is
-> listed in [SOURCES.md](SOURCES.md), Section 2, with its credit line.
+**Who these lectures are for.** Applied researchers and graduate students in the social
+sciences who work with panel data. They are especially suitable for an audience with limited
+mathematical background: each method is introduced through an example and a picture, and
+formulas appear only where the ideas need them.
+
+**A caveat.** The field is moving fast, and these slides lean toward the author's own research
+and understanding of it. Read them as one path through the material rather than as a survey.
 
 | # | Lecture | Handout | Animated |
 |---|---|---|---|
-| 1 | The Parametric Approach | [`Xu_1panel.pdf`](https://yiqingxu.org/public/panel-lectures/handout/Xu_1panel.pdf) (52 pp) | [`Xu_1panel.pdf`](https://yiqingxu.org/public/panel-lectures/animated/Xu_1panel.pdf) (122 pp) |
-| 2 | Difference-in-Differences | [`Xu_2did.pdf`](https://yiqingxu.org/public/panel-lectures/handout/Xu_2did.pdf) (47 pp) | [`Xu_2did.pdf`](https://yiqingxu.org/public/panel-lectures/animated/Xu_2did.pdf) (95 pp) |
-| 3 | Factorial Difference-in-Differences | [`Xu_3fdid.pdf`](https://yiqingxu.org/public/panel-lectures/handout/Xu_3fdid.pdf) (39 pp) | [`Xu_3fdid.pdf`](https://yiqingxu.org/public/panel-lectures/animated/Xu_3fdid.pdf) (120 pp) |
-| 4 | Two-Way Fixed Effects Revisited | [`Xu_4twfe.pdf`](https://yiqingxu.org/public/panel-lectures/handout/Xu_4twfe.pdf) (33 pp) | [`Xu_4twfe.pdf`](https://yiqingxu.org/public/panel-lectures/animated/Xu_4twfe.pdf) (119 pp) |
-| 5 | Modern DID | [`Xu_5modern.pdf`](https://yiqingxu.org/public/panel-lectures/handout/Xu_5modern.pdf) (48 pp) | [`Xu_5modern.pdf`](https://yiqingxu.org/public/panel-lectures/animated/Xu_5modern.pdf) (146 pp) |
-| 6 | Synthetic Control and Extensions | [`Xu_6synth.pdf`](https://yiqingxu.org/public/panel-lectures/handout/Xu_6synth.pdf) (54 pp) | [`Xu_6synth.pdf`](https://yiqingxu.org/public/panel-lectures/animated/Xu_6synth.pdf) (177 pp) |
+| 1 | The Parametric Approach | [`Xu_1parametric_handout.pdf`](https://yiqingxu.org/public/panel-lectures/handout/Xu_1parametric_handout.pdf) (52 pp) | [`Xu_1parametric.pdf`](https://yiqingxu.org/public/panel-lectures/animated/Xu_1parametric.pdf) (122 pp) |
+| 2 | Difference-in-Differences | [`Xu_2did_handout.pdf`](https://yiqingxu.org/public/panel-lectures/handout/Xu_2did_handout.pdf) (47 pp) | [`Xu_2did.pdf`](https://yiqingxu.org/public/panel-lectures/animated/Xu_2did.pdf) (95 pp) |
+| 3 | Factorial Difference-in-Differences | [`Xu_3fdid_handout.pdf`](https://yiqingxu.org/public/panel-lectures/handout/Xu_3fdid_handout.pdf) (39 pp) | [`Xu_3fdid.pdf`](https://yiqingxu.org/public/panel-lectures/animated/Xu_3fdid.pdf) (120 pp) |
+| 4 | Two-Way Fixed Effects Revisited | [`Xu_4twfe_handout.pdf`](https://yiqingxu.org/public/panel-lectures/handout/Xu_4twfe_handout.pdf) (33 pp) | [`Xu_4twfe.pdf`](https://yiqingxu.org/public/panel-lectures/animated/Xu_4twfe.pdf) (119 pp) |
+| 5 | Modern DID | [`Xu_5modern_handout.pdf`](https://yiqingxu.org/public/panel-lectures/handout/Xu_5modern_handout.pdf) (48 pp) | [`Xu_5modern.pdf`](https://yiqingxu.org/public/panel-lectures/animated/Xu_5modern.pdf) (146 pp) |
+| 6 | Synthetic Control and Extensions | [`Xu_6synth_handout.pdf`](https://yiqingxu.org/public/panel-lectures/handout/Xu_6synth_handout.pdf) (56 pp) | [`Xu_6synth.pdf`](https://yiqingxu.org/public/panel-lectures/animated/Xu_6synth.pdf) (184 pp) |
 
-Handouts have one page per slide. The animated versions have one page per step of the
-reveals, for presenting.
+Handouts have one page per slide. The animated versions show each slide's reveals step by
+step, one page per step, for presenting.
 
 **The arc.** Lectures 1 and 2 cover the parametric panel toolkit and the canonical
 difference-in-differences design. Lecture 3 extends that design to events that affect
@@ -26,19 +31,19 @@ two-way fixed effects: the design problem (what strict exogeneity implies for tr
 assignment), parallel trends violations, and the weighting problem under heterogeneous
 effects. Lecture 5 repairs the weighting problem with the heterogeneity-robust estimators
 and works through three applications from a large reanalysis study. Lecture 6 turns to
-low-rank methods (synthetic control, factor models, doubly and triply robust estimators)
-for some parallel trends violations.
+low-rank methods (synthetic control, factor models, doubly and triply robust estimators),
+which handle some violations of parallel trends.
 
 ## Building the slides
 
-You need a full TeX Live 2023 or later with `latexmk` and `biber`; `pdflatex` is enough
-(no XeLaTeX). The decks use the `metropolis` theme (Fira fonts are optional; the theme
-falls back to Computer Modern Sans), `biblatex-chicago`, `csquotes`, `tikz` with the
-`arrows.meta`, `positioning`, `calc`, and `decorations.pathreplacing` libraries, `makecell`,
-`changepage`, `booktabs`, and `subcaption`.
+You need a full TeX Live 2023 or later installation with `latexmk` and `biber`. `pdflatex`
+is enough; XeLaTeX is not needed. The decks use the `metropolis` theme (Fira fonts are
+optional; the theme falls back to Computer Modern Sans), `biblatex-chicago`, `csquotes`,
+`tikz` with the `arrows.meta`, `positioning`, `calc`, and `decorations.pathreplacing`
+libraries, `makecell`, `changepage`, `booktabs`, and `subcaption`.
 
 ```bash
-make            # the six handouts into pdf/handout/ (Xu_1panel.pdf ... Xu_6synth.pdf)
+make            # the six handouts into pdf/handout/ (Xu_1parametric_handout.pdf ...)
 make 05         # one deck's handout (01 .. 06)
 make animated   # the versions with the stepped reveals into pdf/animated/
 make 05-modern  # one deck's animated version
@@ -48,23 +53,24 @@ make clean
 Each handout is built from a throwaway copy of the deck source with the beamer `handout`
 class option and `\handout` set to 1 (a few frames pick a different figure in handout
 mode). Build artifacts go to `<deck>/build/` and the PDFs to `pdf/`; git ignores both, and
-the PDFs are published from `pdf/` to the site. On macOS, if `biber`
-prints a `usage: lipo` message instead of running, accept the Xcode license
-(`sudo xcodebuild -license accept`) or leave the Makefile's `DEVELOPER_DIR` line in place.
+the PDFs are published from `pdf/` to the site. On macOS, if `biber` prints a `usage: lipo`
+message instead of running, accept the Xcode license (`sudo xcodebuild -license accept`) or
+leave the Makefile's `DEVELOPER_DIR` line in place.
 
-## Citations
+## Citations in the slides
 
-All references live in one file, [`references.bib`](references.bib), in Chicago
-author-date style through `biblatex-chicago`. Each deck's References frame is generated
-by `\printbibliography`, so a correction to an entry reaches every deck on the next build.
+All references live in one file, [`references.bib`](references.bib), formatted in Chicago
+author-date style by `biblatex-chicago`. Each deck's References frame is generated by
+`\printbibliography`, so a correction to an entry reaches every deck on the next build.
 
 - In the slides, cite with `\textcite{key}` for "Author (Year)" in running text and
   `\parencite{key}` for "(Author Year)"; `\cite{key}` gives "Author Year" without
   parentheses, for use inside your own brackets, and `\citeyear{key}` the year alone.
-- The style prints one to three names in full and four or more as "First et al.". Where a
-  frame needs the other form, `\citeshort{key}` forces "et al." and `\citeall{key}` prints
-  every name; `\textciteshort`, `\parenciteshort`, `\textciteall`, and `\parenciteall`
-  work the same way. The override lasts for that one citation.
+- For one to three authors the style lists every author; for four or more it prints the
+  first author and "et al.". Where a frame needs the other form, `\citeshort{key}` forces
+  "et al." and `\citeall{key}` prints every name; `\textciteshort`, `\parenciteshort`,
+  `\textciteall`, and `\parenciteall` work the same way. The override lasts for that one
+  citation.
 - To add a reference, append an entry to `references.bib` (key: first author, year, first
   substantive title word, as in `card1994minimum`) and cite it; it appears on the deck's
   References frame automatically. Give full page ranges; the style compresses them.
@@ -74,7 +80,7 @@ by `\printbibliography`, so a correction to an entry reaches every deck on the n
 ```
 common/          preamble.tex (theme, layout, shared packages, citation setup) and theme.tex (the palette)
 references.bib   every reference cited in the six decks
-01-panel/        panel.tex and figs/          04-twfe/    twfe.tex and figs/
+01-parametric/   parametric.tex and figs/     04-twfe/    twfe.tex and figs/
 02-did/          did.tex and figs/            05-modern/  modern.tex and figs/
 03-fdid/         fdid.tex and figs/           06-synth/   synth.tex, preamble.tex, figs/
 pdf/             built PDFs, handout/ and animated/ (not tracked; published to yiqingxu.org)
@@ -83,20 +89,23 @@ SOURCES.md       provenance of every figure; data and scripts; what was left out
 ```
 
 Every deck keeps its own notation macros and theorem counters on purpose: the symbols
-differ between decks, and a shared block would silently change equations. Only the look
-is shared. To rebrand all six decks, edit the four colors at the top of `common/theme.tex`.
+differ between decks, and a shared block would silently change equations. Only the look,
+the package list, and the citation setup are shared. To change the colors of all six decks,
+edit the four colors at the top of `common/theme.tex`.
 
 ## Regenerating figures
 
-The R scripts sit next to the figures they write. Run each from its deck folder.
+The R scripts sit in the `figs/` folder next to the figures they write, and run from there;
+the one exception is `01-parametric/figs/update_panel_examples_2026.R`, which runs from
+`01-parametric/`.
 
 | Script | Writes | Needs |
 |---|---|---|
-| `01-panel/figs/update_panel_examples_2026.R` | the `*_2026.pdf` figures and `fatalities_results_2026.tex` in deck 1 | `dplyr`, `fixest`, `ggplot2`, `haven`, `patchwork`, `plm`, `panelView`, `AER` |
-| `01-panel/figs/svp_heterogeneity_2026.R` | `svp_heterogeneity_2026.pdf` | `haven`, `dplyr`, `fixest`, `ggplot2`, `patchwork` |
+| `01-parametric/figs/update_panel_examples_2026.R` | the `*_2026.pdf` figures and `fatalities_results_2026.tex` in deck 1 | `dplyr`, `fixest`, `ggplot2`, `haven`, `patchwork`, `plm`, `panelView`, `AER` |
+| `01-parametric/figs/svp_heterogeneity_2026.R` | `svp_heterogeneity_2026.pdf` | `haven`, `dplyr`, `fixest`, `ggplot2`, `patchwork` |
 | `02-did/figs/card_krueger_2026.R` | `ck_wages_before_2026.pdf`, `ck_wages_after_2026.pdf`, `ck_map_2026.pdf` | `haven`, `dplyr`, `ggplot2`, `maps` |
 | `02-did/figs/mariel_map_2026.R` | `mariel_map_2026.pdf` | `ggplot2`, `maps` |
-| `02-did/figs/update_simulations_2026.R` | `did_simulation_2026.pdf` | `ggplot2`, `dplyr`, `fdid` |
+| `02-did/figs/update_simulations_2026.R` | `did_simulation_2026.pdf` (also `fdid_famine_2026.pdf`, which no deck uses) | `ggplot2`, `dplyr`, `fdid` |
 | `05-modern/figs/three_settings_2026.R` | `setting_block.pdf`, `setting_staggered.pdf`, `setting_general.pdf` | `ggplot2` |
 | `05-modern/figs/toy_hte_2026.R` | the four `toy_hte_*.pdf` figures | base R |
 | `04-twfe/figs/goodman_bacon_2026.R` | `gb_threegroups_2026.pdf`, `gb_four2x2_2026.pdf`, `gb_divorce_es_2026.pdf`, `gb_weights_2026.pdf` | `dplyr`, `tidyr`, `ggplot2`, `gridExtra`, `fixest`, `bacondecomp` |
@@ -109,12 +118,13 @@ lists image files no deck uses.
 
 ## Figures, data, and credit
 
-[SOURCES.md](SOURCES.md) records where every figure comes from. Own figures and
-R-regenerated figures ship as they are. Figures taken from other people's papers or slides
-are listed there with the planned action (regenerate, keep with attribution, or drop); that
-material remains under its owners' terms and is not covered by the license below.
+[SOURCES.md](SOURCES.md) records where every figure comes from. The author's own figures
+and the figures regenerated by the R scripts are included as they are. Figures taken from
+other people's papers or slides are listed there with what was done about each (regenerated,
+kept with attribution, or dropped); that material remains under its owners' terms and is not
+covered by the license below.
 
-Much of the material builds on joint work:
+Much of the material builds on joint work and on colleagues' slides:
 
 - Lecture 3 follows Xu, Zhao, and Ding (2026, *JASA*), "Factorial Difference-in-Differences,"
   with the application from Cao, Xu, and Zhang (2022, *Journal of Development Economics*)
@@ -130,9 +140,10 @@ Much of the material builds on joint work:
 
 Comments and corrections are welcome as issues or pull requests.
 
-## Citation
+## Citing these lectures
 
-See [CITATION.cff](CITATION.cff). In text: Xu, Yiqing. 2026. *Six Lectures on Causal Panel Analysis.* Lecture slides, version 2026.09.
+See [CITATION.cff](CITATION.cff). Suggested citation: Xu, Yiqing. 2026. *Lectures on Causal
+Panel Analysis.* Lecture slides, version 1.0.0.
 https://github.com/xuyiqing/panel-lectures.
 
 ## License
