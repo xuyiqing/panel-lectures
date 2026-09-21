@@ -1,0 +1,26 @@
+# LaTeX build artifacts (every deck builds into <deck>/build/)
+build/
+*.aux
+*.log
+*.nav
+*.out
+*.snm
+*.toc
+*.vrb
+*.fls
+*.fdb_latexmk
+*.synctex.gz
+*.synctex(busy)
+*_handout.tex
+# local
+.DS_Store
+backup/
+*conflicted copy*
+.Rhistory
+*.bbl
+*.bcf
+*.blg
+*.run.xml
+Rplots.pdf
+# rendered copies of the README made by markdown previewers
+README.html

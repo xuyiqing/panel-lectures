@@ -1,0 +1,63 @@
+% Shared template layer for the six decks: theme, beamer layout, and the packages
+% every deck needs. Each deck inputs this near the top of its preamble, BEFORE
+% ../common/theme.tex (metropolis must be selected before the palette overrides it).
+%
+% Notation macros and theorem environments are deliberately NOT shared. They
+% conflict between the decks, and merging them would silently change symbols
+% inside equations:
+%   \e          decks 1-2: \bs{\epsilon}      deck 3: \boldsymbol{\eta}
+%   \M          decks 1-2: \mb{M}             deck 3: \mathcal{M}
+%   \blue       decks 1-2: blue               deck 3: RoyalBlue
+%   \indep      different implementations
+%   assumption / proposition
+%               decks 1-2: own counter        deck 3: shares the theorem counter
+%
+% Each deck therefore keeps its own notation block. Only the look is unified.
+
+\usetheme{metropolis}
+\setbeamertemplate{navigation symbols}{}
+
+% Deck 3's margins; decks 1 and 2 previously used 2em, which at 9pt is ~6.3mm.
+\setbeamersize{text margin left=5mm, text margin right=5mm}
+\setbeamertemplate{itemize/enumerate body begin}{\leftmargini=1.5em\relax}
+\setbeamertemplate{itemize/enumerate subbody begin}{\leftmarginii=1.5em\relax}
+\setbeamertemplate{itemize/enumerate subsubbody begin}{\leftmarginiii=1.5em\relax}
+
+\usepackage{xcolor}
+\usepackage{colortbl}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{multirow}
+\usepackage{listings}
+\usepackage{booktabs}
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta,positioning,decorations.pathreplacing}
+
+% Citations: one bib file at the repository root, Chicago author-date via biblatex-chicago
+% (needs biber). Reference frames are generated with \printbibliography; in-text citations
+% use \textcite (narrative) and \parencite (parenthetical). The CMS rule prints one to three
+% names in full and four or more as "First et al."; \citeshort forces "et al.", \citeall
+% prints every name (text/paren/author variants likewise). The override lasts one citation.
+\usepackage{csquotes}
+\usepackage[authordate,backend=biber,doi=false,url=false,isbn=false,eprint=false,
+            maxbibnames=10,compresspages=true,dashed=false]{biblatex-chicago}
+\addbibresource{../references.bib}
+\renewcommand*{\bibfont}{\fontsize{6pt}{7.2pt}\selectfont}   % one step below \scriptsize
+\setlength{\bibitemsep}{0.7em}   % visible air between entries
+\setlength{\bibhang}{0.5em}
+% The References frame of every deck: \begin{frame}[t,allowframebreaks=1.1] ... \referencelist.
+% Beamer's automatic break for this list fires at about two thirds of the frame; the factor
+% 1.1 lets it fill the frame. The small negative skip closes the list's top gap.
+\newcommand{\referencelist}{\vspace*{-0.6em}\printbibliography[heading=none]}
+\newcommand{\citeshort}[1]{\AtNextCitekey{\defcounter{maxnames}{1}}\cite{#1}}
+\newcommand{\textciteshort}[1]{\AtNextCitekey{\defcounter{maxnames}{1}}\textcite{#1}}
+\newcommand{\parenciteshort}[1]{\AtNextCitekey{\defcounter{maxnames}{1}}\parencite{#1}}
+\newcommand{\citeauthorshort}[1]{\AtNextCitekey{\defcounter{maxnames}{1}}\citeauthor{#1}}
+\newcommand{\citeall}[1]{\AtNextCitekey{\defcounter{maxnames}{9}}\cite{#1}}
+\newcommand{\textciteall}[1]{\AtNextCitekey{\defcounter{maxnames}{9}}\textcite{#1}}
+\newcommand{\parenciteall}[1]{\AtNextCitekey{\defcounter{maxnames}{9}}\parencite{#1}}
+% PDF metadata: beamer copies the whole \author box into the author field; set it plainly
+% once every deck-level \author has run (etoolbox's end-of-preamble hook).
+\AtEndPreamble{\hypersetup{pdfauthor={Yiqing Xu}}}

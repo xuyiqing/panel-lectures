@@ -1,0 +1,312 @@
+
+
+\usepackage[english]{babel}
+\usepackage{amsmath,bm}
+\usepackage{graphicx}
+\usepackage{amssymb}
+\usepackage{xcolor}
+\usepackage{amsfonts}
+\usepackage{booktabs}
+\usepackage{varioref}
+\usepackage{amsthm}
+\usepackage{epstopdf}
+\usepackage{ifthen}
+\usepackage{multicol}
+\usepackage{epstopdf}
+\usepackage{tabularx}
+\usepackage{booktabs}
+\usepackage{lipsum}
+\usepackage{color}
+\usepackage{subcaption}
+\usepackage{setspace}
+\usepackage{indentfirst}
+\usepackage{verbatim}
+\usepackage{longtable}
+\usepackage{pdflscape}
+\usepackage{movie15}
+\usepackage[english]{babel}
+\usepackage{bbm}			% Blackboard bold for equations
+\usepackage{beamerthemesplit} 
+\usepackage{changepage} % adjust width
+\usepackage{xcolor}
+\usepackage{colortbl} % table with background color
+\usepackage{
+  amscd,
+  amsfonts,
+  amsmath,
+  amssymb,
+  amsbsy,
+  amsthm,
+  bm, % boldmath
+  dsfont,
+  cancel, % cancellation
+  latexsym,
+  cases,
+  setspace,
+  mathtools,
+  graphicx,
+  xcolor,
+  xargs,
+  lineno
+}
+
+
+
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{assumption}[theorem]{Assumption}
+
+\setbeamertemplate{theorems}[numbered]
+
+\input{../common/preamble.tex}   % theme, layout, packages
+\graphicspath{{figs/}}%
+
+\newcommand{\lightgray}{\textcolor{lightgray}}
+\newcommand{\white}{\textcolor{white}}
+\newcommand{\blue}{\textcolor{RoyalBlue}}
+\newcommand{\gray}{\textcolor{gray}}
+\newcommand{\green}{\textcolor{green}}
+\newcommand{\red}{\textcolor{red}}
+\newcommand{\E}{\mathbb{E}}
+\newcommand{\plim}{\mathrm{plim}}
+\def\T{\mathcal{T}}
+\def\C{\mathcal{C}}
+\def\D{\mathcal{D}}
+\def\C{\mathcal{C}}
+\def\O{\mathcal{O}}
+\def\ATT{\mathbf{ATT}}
+\def\ci{\perp\!\!\!\perp}
+\def\bY{\mathbf{Y}}
+\DeclareMathOperator*{\argmax}{arg\,max}
+\DeclareMathOperator*{\argmin}{arg\,min}
+\newcommand{\norm}[1]{\|#1\|} 
+
+\def\ST{\text{\; s.t. \;}}
+\def\WP{\text{\; w.p. \;}}
+\def\IF{\text{ if \;}}
+\def\AS{\text{ as }}
+\def\OR{\text{ or }}
+\def\FOR{\text{ for }}
+\def\AND{\text{ and }}
+\def\THEN{\text{ then }}
+\def\WITH{\text{ with }}
+\newcommand{\WHERE}{\text{ where }}
+\newcommand{\suchthat}{\text{ s.t. }}
+\newcommand{\wrt}{\text{ w.r.t. }}
+\providecommand{\subjectto}{\mathop{\rm subject\;to}}
+\providecommand{\sto}{\mathop{\rm subject\;to}}
+
+
+\newcommand{\bs}{\boldsymbol}
+\newcommand{\mb}{\mathbf}
+\newcommand{\blck}[1]{\textcolor{black}{#1}}
+\newcommand{\viol}[1]{\textcolor{violet}{#1}}
+%\newcommand{\red}[1]{\textcolor{red}{#1}}
+%\newcommand{\white}[1]{\textcolor{white}{#1}}
+%\newcommand{\blue}[1]{\textcolor{DarkBlue2}{#1}}
+%\newcommand{\green}[1]{\textcolor{green}{#1}}
+\newcommand{\cya}[1]{\textcolor{cyan}{#1}}
+\newcommand{\yel}[1]{\textcolor{yellow}{#1}}
+\newcommand{\gr}[1]{\textcolor{green}{#1}}
+\definecolor{DarkBlue2}{rgb}{0.00,0.08,0.6}
+\definecolor{CardinalRed}{cmyk}{0,1,0.65,0.34} % Cardinal Red
+\newcommand{\real}{\mathbb{R}}
+\newcommand{\normdist}[2]{\ensuremath{\mathcal{N}(#1,#2)}}
+\newcommand{\normdistk}[3]{\ensuremath{\mathcal{N}_{#3}(#1,#2)}}
+\renewcommand{\a}{\boldsymbol{\alpha}}
+\newcommand{\bt}{\boldsymbol{\beta}}
+\newcommand{\e}{\boldsymbol{\eta}}
+\newcommand{\ze}{\boldsymbol{\zeta}}
+\newcommand{\ep}{\boldsymbol{\epsilon}}
+\renewcommand{\d}{\boldsymbol{\delta}}
+\renewcommand{\o}{\boldsymbol{\omega}}
+\newcommand{\Oo}{\boldsymbol{\Omega}}
+\newcommand{\p}{\boldsymbol{\pi}}
+\newcommand{\xx}{\boldsymbol{\xi}}
+\newcommand{\hp}{\hat{\pi}}
+\renewcommand{\S}{\boldsymbol{\Sigma}}
+\newcommand{\Te}{\boldsymbol{\Theta}}
+\newcommand{\te}{\boldsymbol{\theta}}
+\newcommand{\rh}{\boldsymbol{\rho}}
+\newcommand{\vp}{\boldsymbol{\varepsilon}}
+\newcommand{\ka}{\boldsymbol{\kappa}}
+\newcommand{\ps}{\boldsymbol{\psi}}
+\newcommand{\ga}{\boldsymbol{\gamma}}
+\newcommand{\Ga}{\boldsymbol{\Gamma}}
+\newcommand{\me}{\boldsymbol{\mu}}
+\newcommand{\ph}{\boldsymbol{\phi}}
+\newcommand{\nnu}{\boldsymbol{\nu}}
+%\newcommand{\1}{\mathbb{1}}
+\newcommand\indep{\protect\mathpalette{\protect\independenT}{\perp}}
+\def\independenT#1#2{\mathrel{\rlap{$#1#2$}\mkern2mu{#1#2}}}
+\newcommand{\Nd}{\mathcal{N}}
+\newcommand{\Wd}{\mathcal{W}}
+\newcommand{\Ud}{\mathcal{U}}
+\newcommand{\Ad}{\mathcal{A}}
+\newcommand{\y}{\mathbf{y}}
+\newcommand{\x}{\mathbf{x}}
+\newcommand{\Y}{\mathbf{Y}}
+\newcommand{\X}{\mathbf{X}}
+\newcommand{\z}{\mathbf{z}}
+\newcommand{\Z}{\mathbf{Z}}
+\newcommand{\Ss}{\mathbf{S}}
+\newcommand{\Ff}{\mathbf{F}}
+\newcommand{\B}{\mathbf{B}}
+\newcommand{\A}{\mathbf{A}}
+\newcommand{\K}{\mathbf{K}}
+\newcommand{\F}{\mathbf{F}}
+\newcommand{\G}{\mathbf{G}}
+\newcommand{\Tt}{\mathbf{T}}
+\newcommand{\V}{\mathbf{V}}
+\newcommand{\Mm}{\mathbf{M}}
+\newcommand{\vv}{\mathbf{v}}
+\newcommand{\U}{\mathbf{U}}
+\newcommand{\Hh}{\mathbf{H}}
+\newcommand{\Q}{\mathbf{Q}}
+\newcommand{\I}{\mathbf{I}}
+\newcommand{\f}{\mathbf{f}}
+\newcommand{\Pp}{\mathbf{P}}
+\newcommand{\pp}{\mathbf{p}}
+\newcommand{\w}{\mathbf{w}}
+\newcommand{\W}{\mathbf{W}}
+\newcommand{\s}{\mathbf{s}}
+\newcommand{\bi}{\mathbf{b}}
+\newcommand{\ct}{\mathbf{c}}
+\newcommand{\uu}{\mathbf{u}}
+\newcommand{\q}{\mathbf{q}}
+\newcommand{\di}{\mathbf{d}}
+\newcommand{\ee}{\mathbf{e}}
+\newcommand{\ab}{\mathbf{a}}
+\newcommand{\0}{\mathbf{0}}
+
+
+\newcommand{\Mone}{\ensuremath{\mathcal{M}_1}}
+\newcommand{\Mtwo}{\ensuremath{\mathcal{M}_2}}
+\newcommand{\Mk}{\ensuremath{\mathcal{M}_k}}
+\newcommand{\M}{\ensuremath{\mathcal{M}}}
+\newcommand{\R}{{\normalfont{\texttt{R}}}}
+\definecolor{nucolor}{rgb}{.8,.4,0}
+
+\newcounter{levelcount}
+\def\levelwidth{1.05in}
+\def\levelwidthi{2.6in}
+\def\levelwidthii{.9in}
+\def\levelwidthiii{.3in}
+\newcommand\BL[2][$\bullet$]{#1\,\parbox[t]{%
+  \csname levelwidth\romannumeral\thelevelcount\endcsname}{\raggedright#2}}
+\def\level#1{\stepcounter{levelcount}%
+  \unskip $\left\{\vcenter{\hbox{\shortstack{#1}}}\right.$%
+  \addtocounter{levelcount}{-1}\ignorespaces}
+\newcommand\skipcol[2][$\bullet$]{\unskip\mbox{} %
+  \hphantom{$\left\{\hbox{#1\,\parbox[t]{%
+  \csname levelwidth\romannumeral#2\endcsname}{\mbox{}}}\right.$}%
+  \ignorespaces}
+
+% indicator function
+\newcommand*\Indic[1]{\mathds{1}_{#1}}
+
+% definition bench
+\newcommand{\defeq}{\vcentcolon=}
+\newcommand{\eqdef}{=\vcentcolon}
+
+% matrix transprose
+\newcommand{\trap}[1]{ #1^{\top}}
+\newcommand{\tra}{^{\top}}
+
+% big parentheses
+\newcommand*\Bigpar[1]{\left( #1 \right )}
+\newcommand*\Bigbr[1]{\left[ #1 \right ]}
+\newcommand*\Bigcr[1]{\left\{ #1 \right \}}
+% set builder notation
+\newcommand*\SetB[1]{\left\{ #1 \right\}}
+% set
+\newcommand*\Sett[1]{\mathcal{#1}}
+% shorthand for data (Murphy PML style)
+\newcommand{\Data}{\mathcal{D}}
+
+% generic vector and matrix
+\newcommand{\mc}[1]{\mathcal{#1}}
+\def\mbf#1{\mathbf{#1}}
+\def\mrm#1{\mathrm{#1}}
+\def\mbi#1{\boldsymbol{#1}} % Bold and italic (math bold italic)
+\def\ve#1{\mbi{#1}} % Vector notation
+\def\vee#1{\mathbf{#1}} % Vector notation
+\def\vea#1{\overrightarrow{#1}} % Vector notation
+\newcommand*{\Vect}[1]{\mbi{#1}}
+\newcommand*{\Mat}[1]{\mathbf{#1}}
+
+\newcommand{\eucN}[1]{\norm{#1}} % l1 norm
+\newcommand{\lzero}[1]{\norm{#1}_0} % l0 norm
+\newcommand{\lone}[1]{\norm{#1}_1} % l1 norm
+\newcommand{\ltwo}[1]{\norm{#1}_2} % l2 norm
+\newcommand{\pnorm}[1]{\norm{#1}_p} % p-norm
+\newcommand{\linf}[1]{\norm{#1}_\infty} % l-infinity norm
+\newcommand{\lfro}[1]{\left\|{#1}\right\|_{\rm Fr}} % Frobenius norm
+\newcommand{\matrixnorm}[1]{\left|\!\left|\!\left|{#1}
+  \right|\!\right|\!\right|} % Matrix norm with three bars
+\newcommand{\matrixnorms}[1]{|\!|\!|{#1}|\!|\!|} % Small matrix norm
+\newcommand{\opnorm}[1]{\matrixnorm{#1}_{\rm op}}
+\newcommand{\opnorms}[1]{\matrixnorms{#1}_{\rm op}}
+\newcommand{\normbigg}[1]{\bigg\|{#1}\bigg\|} % A norm with 1 argument and bigg brackets.
+\newcommand{\lonebigg}[1]{\normbigg{#1}_1} % l1 norm
+\newcommand{\ltwobigg}[1]{\normbigg{#1}_2} % l2 norm
+\newcommand{\linfbigg}[1]{\normbigg{#1}_\infty} % l-infinity norm
+\newcommand{\norms}[1]{\|{#1}\|} % A norm with 1 argument and normal (small) brackets.
+\newcommand{\lones}[1]{\norms{#1}_1} % l1 norm with small brackets
+\newcommand{\ltwos}[1]{\norms{#1}_2} % l2 norm with small brackets
+\newcommand{\linfs}[1]{\norms{#1}_\infty} % l-infinity norm with small brackets
+\newcommand{\hinge}[1]{\left[{#1}\right]_+}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% tildes / hats / bars etc
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newcommand{\Pn}[1]{\mathbb{P}_n\Bigpar{#1}} % empirical average
+
+\newcommand{\what}[1]{\widehat{#1}} % Wide hat
+\newcommand{\wh}[1]{\widehat{#1}} % Wide hat
+\newcommand{\wt}[1]{\widetilde{#1}} % Wide tilde
+\newcommand{\wb}[1]{\overline{#1}} % Wide bar
+\newcommand*\wtil[1]{\widetilde{#1}} % widehat, widetilde
+\newcommand*\Ol[1]{\overline{#1}} % over and underbars
+\newcommand*\Ul[1]{\underline{#1}} % star
+\newcommand*\Str[1]{#1^{*}}
+\newcommand{\half}{\frac{1}{2}}
+\newcommand{\<}{\left\langle} % Angle brackets
+\renewcommand{\>}{\right\rangle} % End angle brackets
+
+%  linalg stuff
+\providecommand{\dom}{\mathop{\rm dom}}
+\providecommand{\diag}{\mathop{\rm diag}}
+\providecommand{\tr}{\mathop{\rm tr}}
+\providecommand{\abs}{\mathop{\rm abs}}
+\providecommand{\card}{\mathop{\rm card}}
+\providecommand{\sign}{\mathop{\rm sign}}
+\providecommand{\cl}{\mathop{\rm cl}}
+\providecommand{\interior}{\mathop{\rm int}}
+\providecommand{\conv}{\mathop{\rm Conv}}
+\providecommand{\relint}{\mathop{\rm relint}}
+\providecommand{\vol}{\mathop{\rm Vol}}
+\providecommand{\supp}{\mathop{\rm supp}}
+
+
+% Highlight part of eqn with colour
+\newcommand*\hlred[1]{\textcolor{red}{#1}}
+\newcommand*\hlblu[1]{\textcolor{blue}{#1}}
+\newcommand*\hlcyn[1]{\textcolor{cyan}{#1}}
+
+
+% Sums and products
+\newcommand{\sumin}{\ensuremath{\sum_{i=1}^n}}
+\newcommand{\sumiN}{\ensuremath{\sum_{i=1}^n}}
+\newcommand{\sumim}{\ensuremath{\sum_{i=1}^m}}
+\newcommand{\sumjk}{\ensuremath{\sum_{j=1}^k}}
+\newcommand{\sumjj}{\ensuremath{\sum_{j=1}^J}}
+\newcommand{\sumjn}{\ensuremath{\sum_{j=1}^n}}
+\newcommand{\sumjm}{\ensuremath{\sum_{j=1}^m}}
+\newcommand{\isum}[1][n]{\ensuremath{\sum_{#1}^\infty}}
+\newcommand{\dsum}[4][i=1]{\ensuremath{\sum_{#1}^{#2}\sum_{#3}^{#4}}}
+\newcommand{\Prod}[2][i=1]{\ensuremath{\prod_{#1}^{#2}}}
+\newcommand{\prodin}{\ensuremath{\prod_{i=1}^N}}
+\newcommand{\prodjn}{\ensuremath{\prod_{j=1}^n}}
+

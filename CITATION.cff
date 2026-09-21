@@ -1,0 +1,19 @@
+cff-version: 1.2.0
+message: "If you use or adapt these slides, please cite them as below."
+title: "Panel Methods: Six Lectures on Causal Inference with Panel Data"
+authors:
+  - family-names: Xu
+    given-names: Yiqing
+    affiliation: Stanford University
+version: "2026.09"
+date-released: "2026-09-20"
+url: "https://github.com/xuyiqing/panel-lectures"
+license: CC-BY-4.0
+keywords:
+  - panel data
+  - causal inference
+  - difference-in-differences
+  - two-way fixed effects
+  - synthetic control
+  - factor models
+  - lecture slides

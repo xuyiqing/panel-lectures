@@ -1,0 +1,145 @@
+# Panel Methods: Six Lectures on Causal Inference with Panel Data
+
+Slides for six 100-120 minute lectures on causal panel analysis: LaTeX Beamer sources,
+figures, the R scripts that regenerate them, one bibliography file, and PDF handouts.
+Version: September 2026.
+
+> Status (2026-09-21): private repository. Third-party material that remains in the decks is
+> listed in [SOURCES.md](SOURCES.md), Section 2, with its credit line.
+
+| # | Lecture | Handout | Pages |
+|---|---|---|---|
+| 1 | The Parametric Approach | [`pdf/01-panel.pdf`](pdf/01-panel.pdf) | 52 |
+| 2 | Difference-in-Differences | [`pdf/02-did.pdf`](pdf/02-did.pdf) | 48 |
+| 3 | Factorial Difference-in-Differences | [`pdf/03-fdid.pdf`](pdf/03-fdid.pdf) | 39 |
+| 4 | Two-Way Fixed Effects Revisited | [`pdf/04-twfe.pdf`](pdf/04-twfe.pdf) | 33 |
+| 5 | Modern DID | [`pdf/05-modern.pdf`](pdf/05-modern.pdf) | 48 |
+| 6 | Synthetic Control and Extensions | [`pdf/06-synth.pdf`](pdf/06-synth.pdf) | 54 |
+
+**The arc.** Lectures 1 and 2 cover the parametric panel toolkit and the canonical
+difference-in-differences design. Lecture 3 extends that design to events that affect
+everyone (factorial difference-in-differences). Lecture 4 diagnoses three problems with
+two-way fixed effects: the design problem (what strict exogeneity implies for treatment
+assignment), parallel trends violations, and the weighting problem under heterogeneous
+effects. Lecture 5 repairs the weighting problem with the heterogeneity-robust estimators
+and works through three applications from a large reanalysis study. Lecture 6 turns to
+low-rank methods (synthetic control, factor models, doubly and triply robust estimators)
+for some parallel trends violations.
+
+## Building the slides
+
+You need a full TeX Live 2023 or later with `latexmk` and `biber`; `pdflatex` is enough
+(no XeLaTeX). The decks use the `metropolis` theme (Fira fonts are optional; the theme
+falls back to Computer Modern Sans), `biblatex-chicago`, `csquotes`, `tikz` with the
+`arrows.meta`, `positioning`, `calc`, and `decorations.pathreplacing` libraries, `makecell`,
+`changepage`, `booktabs`, and `subcaption`.
+
+```bash
+make            # the six handouts into pdf/
+make 05         # one deck (01 .. 06)
+make projection # the projection versions with overlays, into <deck>/build/
+make clean
+```
+
+Each handout is built from a throwaway copy of the deck source with the beamer `handout`
+class option and `\handout` set to 1 (a few frames pick a different figure in handout
+mode). Build artifacts go to `<deck>/build/`, which git ignores. On macOS, if `biber`
+prints a `usage: lipo` message instead of running, accept the Xcode license
+(`sudo xcodebuild -license accept`) or leave the Makefile's `DEVELOPER_DIR` line in place.
+
+## Citations
+
+All references live in one file, [`references.bib`](references.bib), in Chicago
+author-date style through `biblatex-chicago`. Each deck's References frame is generated
+by `\printbibliography`, so a correction to an entry reaches every deck on the next build.
+
+- In the slides, cite with `\textcite{key}` for "Author (Year)" in running text and
+  `\parencite{key}` for "(Author Year)"; `\cite{key}` gives "Author Year" without
+  parentheses, for use inside your own brackets, and `\citeyear{key}` the year alone.
+- The style prints one to three names in full and four or more as "First et al.". Where a
+  frame needs the other form, `\citeshort{key}` forces "et al." and `\citeall{key}` prints
+  every name; `\textciteshort`, `\parenciteshort`, `\textciteall`, and `\parenciteall`
+  work the same way. The override lasts for that one citation.
+- To add a reference, append an entry to `references.bib` (key: first author, year, first
+  substantive title word, as in `card1994minimum`) and cite it; it appears on the deck's
+  References frame automatically. Give full page ranges; the style compresses them.
+
+## Layout
+
+```
+common/          preamble.tex (theme, layout, shared packages, citation setup) and theme.tex (the palette)
+references.bib   every reference cited in the six decks
+01-panel/        panel.tex and figs/          04-twfe/    twfe.tex and figs/
+02-did/          did.tex and figs/            05-modern/  modern.tex and figs/
+03-fdid/         fdid.tex and figs/           06-synth/   synth.tex, preamble.tex, figs/
+pdf/             the six handouts
+scripts/         check_figures.py (missing or unused figures)
+SOURCES.md       provenance of every figure; data and scripts; what was left out
+```
+
+Every deck keeps its own notation macros and theorem counters on purpose: the symbols
+differ between decks, and a shared block would silently change equations. Only the look
+is shared. To rebrand all six decks, edit the four colors at the top of `common/theme.tex`.
+
+## Regenerating figures
+
+The R scripts sit next to the figures they write. Run each from its deck folder.
+
+| Script | Writes | Needs |
+|---|---|---|
+| `01-panel/figs/update_panel_examples_2026.R` | the `*_2026.pdf` figures and `fatalities_results_2026.tex` in deck 1 | `dplyr`, `fixest`, `ggplot2`, `haven`, `patchwork`, `plm`, `panelView`, `AER` |
+| `01-panel/figs/svp_heterogeneity_2026.R` | `svp_heterogeneity_2026.pdf` | `haven`, `dplyr`, `fixest`, `ggplot2`, `patchwork` |
+| `02-did/figs/card_krueger_2026.R` | `ck_wages_before_2026.pdf`, `ck_wages_after_2026.pdf`, `ck_map_2026.pdf` | `haven`, `dplyr`, `ggplot2`, `maps` |
+| `02-did/figs/mariel_map_2026.R` | `mariel_map_2026.pdf` | `ggplot2`, `maps` |
+| `02-did/figs/update_simulations_2026.R` | `did_simulation_2026.pdf` | `ggplot2`, `dplyr`, `fdid` |
+| `05-modern/figs/three_settings_2026.R` | `setting_block.pdf`, `setting_staggered.pdf`, `setting_general.pdf` | `ggplot2` |
+| `05-modern/figs/toy_hte_2026.R` | the four `toy_hte_*.pdf` figures | base R |
+| `04-twfe/figs/goodman_bacon_2026.R` | `gb_threegroups_2026.pdf`, `gb_four2x2_2026.pdf`, `gb_divorce_es_2026.pdf`, `gb_weights_2026.pdf` | `dplyr`, `tidyr`, `ggplot2`, `gridExtra`, `fixest`, `bacondecomp` |
+| `06-synth/figs/trop_rmse_2026.R` | `trop_rmse_2026.pdf` | `ggplot2` |
+| `06-synth/figs/augsynth_prop99_2026.R` | `augsynth_prop99_2026.pdf` | `augsynth` (GitHub: ebenmichael/augsynth), `tidysynth`, `dplyr`, `ggplot2` |
+
+`python3 scripts/check_figures.py` confirms that every figure a deck references exists
+under exactly that name (the check is case-sensitive, so a Linux clone builds too) and
+lists image files no deck uses.
+
+## Figures, data, and credit
+
+[SOURCES.md](SOURCES.md) records where every figure comes from. Own figures and
+R-regenerated figures ship as they are. Figures taken from other people's papers or slides
+are listed there with the planned action (regenerate, keep with attribution, or drop); that
+material remains under its owners' terms and is not covered by the license below.
+
+Much of the material builds on joint work:
+
+- Lecture 3 follows Xu, Zhao, and Ding (2026, *JASA*), "Factorial Difference-in-Differences,"
+  with the application from Cao, Xu, and Zhang (2022, *Journal of Development Economics*)
+  and the `fdid` R package.
+- Lectures 4 and 5 draw on the reanalysis study with Albert Chiu, Xingchen Lan, and Ziyi Liu
+  (Chiu, Lan, Liu, and Xu 2026, *American Political Science Review*); the replication
+  figures in Lecture 5 come from that project.
+- Lectures 1 and 2 build on teaching slides by Jens Hainmueller, as noted on their References
+  frames.
+- Lecture 6 uses Luke Sanford's Benin land-titling example and, on the synthetic DID frames,
+  figures from the authors' slides (Arkhangelsky, Athey, Hirshberg, Imbens, and Wager); both
+  are credited on the slides.
+
+Comments and corrections are welcome as issues or pull requests.
+
+## Citation
+
+See [CITATION.cff](CITATION.cff). In text: Xu, Yiqing. 2026. *Six Lectures on Causal Panel Analysis.* Lecture slides, version 2026.09.
+https://github.com/xuyiqing/panel-lectures.
+
+## License
+
+Except where otherwise noted:
+
+* The rendered lecture slides and notes, their LaTeX source files, and original figures
+  created by the author are licensed under the
+  [Creative Commons Attribution 4.0 International License](https://creativecommons.org/licenses/by/4.0/)
+  (CC BY 4.0). See [`LICENSE`](LICENSE).
+* The software in this repository, including the `Makefile`, files under `scripts/`, and
+  R source files under `figs/`, is licensed under the [MIT License](LICENSE-CODE).
+* Third-party figures, data, and other materials identified in [`SOURCES.md`](SOURCES.md)
+  are excluded from these licenses and remain subject to their respective copyright and
+  license terms.

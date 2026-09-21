@@ -1,0 +1,37 @@
+% Shared visual system for the six decks: palette, fonts, footline.
+% Swap the four colors below to rebrand every deck at once.
+\definecolor{SlideRed}{HTML}{9E1B32}
+\definecolor{SlideInk}{HTML}{252A34}
+\definecolor{SlideBlue}{HTML}{2F6B9A}
+\definecolor{SlideMist}{HTML}{F8F3F3}
+
+
+\setbeamercolor{normal text}{fg=SlideInk,bg=white}
+\setbeamercolor{structure}{fg=SlideRed}
+\setbeamercolor{alerted text}{fg=SlideRed}
+\setbeamercolor{frametitle}{fg=white,bg=SlideRed}
+\setbeamercolor{title}{fg=SlideRed}
+\setbeamercolor{subtitle}{fg=SlideInk}
+\setbeamercolor{block title}{fg=white,bg=SlideRed}
+\setbeamercolor{block body}{fg=SlideInk,bg=SlideMist}
+\setbeamercolor{section in toc}{fg=SlideRed}
+
+\setbeamerfont{title}{series=\bfseries,size=\Large}
+\setbeamerfont{frametitle}{series=\bfseries,size=\large}
+\setbeamerfont{block title}{series=\bfseries}
+\setbeamertemplate{navigation symbols}{}
+\setbeamertemplate{items}[circle]
+\setbeamertemplate{blocks}[rounded][shadow=false]
+\setbeamertemplate{bibliography item}{}   % no document icons on the References frames
+\setbeamertemplate{frametitle continuation}{}
+\setbeamertemplate{footline}{%
+  \leavevmode\hbox{%
+  \begin{beamercolorbox}[wd=.88\paperwidth,ht=2.6ex,dp=1.2ex,leftskip=1.2em]{author in head/foot}%
+  \usebeamerfont{author in head/foot}\insertshorttitle
+  \end{beamercolorbox}%
+  \begin{beamercolorbox}[wd=.12\paperwidth,ht=2.6ex,dp=1.2ex,center]{date in head/foot}%
+  \insertframenumber
+  \end{beamercolorbox}}}
+
+\newcommand{\slidesource}[1]{\vfill{\scriptsize\color{gray}Source: #1}}
+\newcommand{\keyquestion}[1]{\begin{block}{Question}#1\end{block}}
