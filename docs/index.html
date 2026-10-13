@@ -151,8 +151,7 @@ ul.task-list li input[type="checkbox"] {
 <tr class="header">
 <th>#</th>
 <th>Lecture</th>
-<th>Handout</th>
-<th>Animated</th>
+<th>Slides</th>
 <th>Source</th>
 </tr>
 </thead>
@@ -161,47 +160,41 @@ ul.task-list li input[type="checkbox"] {
 <td>1</td>
 <td>The Parametric Approach</td>
 <td><a href="https://yiqingxu.org/public/panel-lectures/handout/Xu_1parametric_handout.pdf">52 pp</a></td>
-<td><a href="https://yiqingxu.org/public/panel-lectures/animated/Xu_1parametric.pdf">122 pp</a></td>
 <td><a href="https://github.com/xuyiqing/panel-lectures/tree/main/01-parametric">code</a></td>
 </tr>
 <tr class="even">
 <td>2</td>
 <td>Difference-in-Differences</td>
 <td><a href="https://yiqingxu.org/public/panel-lectures/handout/Xu_2did_handout.pdf">47 pp</a></td>
-<td><a href="https://yiqingxu.org/public/panel-lectures/animated/Xu_2did.pdf">95 pp</a></td>
 <td><a href="https://github.com/xuyiqing/panel-lectures/tree/main/02-did">code</a></td>
 </tr>
 <tr class="odd">
 <td>3</td>
 <td>Factorial Difference-in-Differences</td>
 <td><a href="https://yiqingxu.org/public/panel-lectures/handout/Xu_3fdid_handout.pdf">39 pp</a></td>
-<td><a href="https://yiqingxu.org/public/panel-lectures/animated/Xu_3fdid.pdf">120 pp</a></td>
 <td><a href="https://github.com/xuyiqing/panel-lectures/tree/main/03-fdid">code</a></td>
 </tr>
 <tr class="even">
 <td>4</td>
 <td>Two-Way Fixed Effects Revisited</td>
 <td><a href="https://yiqingxu.org/public/panel-lectures/handout/Xu_4twfe_handout.pdf">33 pp</a></td>
-<td><a href="https://yiqingxu.org/public/panel-lectures/animated/Xu_4twfe.pdf">119 pp</a></td>
 <td><a href="https://github.com/xuyiqing/panel-lectures/tree/main/04-twfe">code</a></td>
 </tr>
 <tr class="odd">
 <td>5</td>
 <td>Modern DID</td>
 <td><a href="https://yiqingxu.org/public/panel-lectures/handout/Xu_5modern_handout.pdf">48 pp</a></td>
-<td><a href="https://yiqingxu.org/public/panel-lectures/animated/Xu_5modern.pdf">146 pp</a></td>
 <td><a href="https://github.com/xuyiqing/panel-lectures/tree/main/05-modern">code</a></td>
 </tr>
 <tr class="even">
 <td>6</td>
 <td>Synthetic Control and Extensions</td>
 <td><a href="https://yiqingxu.org/public/panel-lectures/handout/Xu_6synth_handout.pdf">56 pp</a></td>
-<td><a href="https://yiqingxu.org/public/panel-lectures/animated/Xu_6synth.pdf">184 pp</a></td>
 <td><a href="https://github.com/xuyiqing/panel-lectures/tree/main/06-synth">code</a></td>
 </tr>
 </tbody>
 </table>
-<p>The page counts link to the PDFs. The handouts have one page per slide, for reading. The animated versions show each slide’s reveals step by step, one page per step, for presenting. “Code” opens the lecture’s folder on GitHub: the LaTeX source, the figures, and the R scripts that draw them.</p>
+<p>The page counts link to the PDFs, which have one page per slide. To present with the step-by-step reveals, build that version from the LaTeX source (<code>make animated</code>). “Code” opens the lecture’s folder on GitHub: the LaTeX source, the figures, and the R scripts that draw them.</p>
 <section id="the-arc" class="level2">
 <h2 class="anchored" data-anchor-id="the-arc">The arc</h2>
 <p>Lectures 1 and 2 cover the parametric panel toolkit and the canonical difference-in-differences design. Lecture 3 extends that design to events that affect everyone (factorial difference-in-differences). Lecture 4 diagnoses three problems with two-way fixed effects: the design problem (what strict exogeneity implies for treatment assignment), violations of parallel trends, and the weighting problem when effects differ across units. Lecture 5 repairs the weighting problem with estimators that allow effects to differ, and works through three applications from a large reanalysis study. Lecture 6 turns to synthetic control, factor models, and doubly and triply robust estimators, which handle some violations of parallel trends.</p>

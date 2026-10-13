@@ -8,17 +8,17 @@ lectures are for applied researchers and graduate students in the social science
 panel data. Each method is introduced through an example and a picture, and formulas appear only
 where the ideas need them.
 
-| # | Lecture | Handout | Animated | Source |
-|---|---|---|---|---|
-| 1 | The Parametric Approach | [52 pp](https://yiqingxu.org/public/panel-lectures/handout/Xu_1parametric_handout.pdf) | [122 pp](https://yiqingxu.org/public/panel-lectures/animated/Xu_1parametric.pdf) | [code](https://github.com/xuyiqing/panel-lectures/tree/main/01-parametric) |
-| 2 | Difference-in-Differences | [47 pp](https://yiqingxu.org/public/panel-lectures/handout/Xu_2did_handout.pdf) | [95 pp](https://yiqingxu.org/public/panel-lectures/animated/Xu_2did.pdf) | [code](https://github.com/xuyiqing/panel-lectures/tree/main/02-did) |
-| 3 | Factorial Difference-in-Differences | [39 pp](https://yiqingxu.org/public/panel-lectures/handout/Xu_3fdid_handout.pdf) | [120 pp](https://yiqingxu.org/public/panel-lectures/animated/Xu_3fdid.pdf) | [code](https://github.com/xuyiqing/panel-lectures/tree/main/03-fdid) |
-| 4 | Two-Way Fixed Effects Revisited | [33 pp](https://yiqingxu.org/public/panel-lectures/handout/Xu_4twfe_handout.pdf) | [119 pp](https://yiqingxu.org/public/panel-lectures/animated/Xu_4twfe.pdf) | [code](https://github.com/xuyiqing/panel-lectures/tree/main/04-twfe) |
-| 5 | Modern DID | [48 pp](https://yiqingxu.org/public/panel-lectures/handout/Xu_5modern_handout.pdf) | [146 pp](https://yiqingxu.org/public/panel-lectures/animated/Xu_5modern.pdf) | [code](https://github.com/xuyiqing/panel-lectures/tree/main/05-modern) |
-| 6 | Synthetic Control and Extensions | [56 pp](https://yiqingxu.org/public/panel-lectures/handout/Xu_6synth_handout.pdf) | [184 pp](https://yiqingxu.org/public/panel-lectures/animated/Xu_6synth.pdf) | [code](https://github.com/xuyiqing/panel-lectures/tree/main/06-synth) |
+| # | Lecture | Slides | Source |
+|---|---|---|---|
+| 1 | The Parametric Approach | [52 pp](https://yiqingxu.org/public/panel-lectures/handout/Xu_1parametric_handout.pdf) | [code](https://github.com/xuyiqing/panel-lectures/tree/main/01-parametric) |
+| 2 | Difference-in-Differences | [47 pp](https://yiqingxu.org/public/panel-lectures/handout/Xu_2did_handout.pdf) | [code](https://github.com/xuyiqing/panel-lectures/tree/main/02-did) |
+| 3 | Factorial Difference-in-Differences | [39 pp](https://yiqingxu.org/public/panel-lectures/handout/Xu_3fdid_handout.pdf) | [code](https://github.com/xuyiqing/panel-lectures/tree/main/03-fdid) |
+| 4 | Two-Way Fixed Effects Revisited | [33 pp](https://yiqingxu.org/public/panel-lectures/handout/Xu_4twfe_handout.pdf) | [code](https://github.com/xuyiqing/panel-lectures/tree/main/04-twfe) |
+| 5 | Modern DID | [48 pp](https://yiqingxu.org/public/panel-lectures/handout/Xu_5modern_handout.pdf) | [code](https://github.com/xuyiqing/panel-lectures/tree/main/05-modern) |
+| 6 | Synthetic Control and Extensions | [56 pp](https://yiqingxu.org/public/panel-lectures/handout/Xu_6synth_handout.pdf) | [code](https://github.com/xuyiqing/panel-lectures/tree/main/06-synth) |
 
-The page counts link to the PDFs. The handouts have one page per slide, for reading. The animated versions
-show each slide's reveals step by step, one page per step, for presenting. "Code" opens the
+The page counts link to the PDFs, which have one page per slide. To present with the step-by-step
+reveals, build that version from the LaTeX source (`make animated`). "Code" opens the
 lecture's folder on GitHub: the LaTeX source, the figures, and the R scripts that draw them.
 
 ## The arc

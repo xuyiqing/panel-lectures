@@ -12,17 +12,17 @@ formulas appear only where the ideas need them.
 **A caveat.** The field is moving fast, and these slides lean toward the author's own research
 and understanding of it. Read them as one path through the material rather than as a survey.
 
-| # | Lecture | Handout | Animated |
-|---|---|---|---|
-| 1 | The Parametric Approach | [`Xu_1parametric_handout.pdf`](https://yiqingxu.org/public/panel-lectures/handout/Xu_1parametric_handout.pdf) (52 pp) | [`Xu_1parametric.pdf`](https://yiqingxu.org/public/panel-lectures/animated/Xu_1parametric.pdf) (122 pp) |
-| 2 | Difference-in-Differences | [`Xu_2did_handout.pdf`](https://yiqingxu.org/public/panel-lectures/handout/Xu_2did_handout.pdf) (47 pp) | [`Xu_2did.pdf`](https://yiqingxu.org/public/panel-lectures/animated/Xu_2did.pdf) (95 pp) |
-| 3 | Factorial Difference-in-Differences | [`Xu_3fdid_handout.pdf`](https://yiqingxu.org/public/panel-lectures/handout/Xu_3fdid_handout.pdf) (39 pp) | [`Xu_3fdid.pdf`](https://yiqingxu.org/public/panel-lectures/animated/Xu_3fdid.pdf) (120 pp) |
-| 4 | Two-Way Fixed Effects Revisited | [`Xu_4twfe_handout.pdf`](https://yiqingxu.org/public/panel-lectures/handout/Xu_4twfe_handout.pdf) (33 pp) | [`Xu_4twfe.pdf`](https://yiqingxu.org/public/panel-lectures/animated/Xu_4twfe.pdf) (119 pp) |
-| 5 | Modern DID | [`Xu_5modern_handout.pdf`](https://yiqingxu.org/public/panel-lectures/handout/Xu_5modern_handout.pdf) (48 pp) | [`Xu_5modern.pdf`](https://yiqingxu.org/public/panel-lectures/animated/Xu_5modern.pdf) (146 pp) |
-| 6 | Synthetic Control and Extensions | [`Xu_6synth_handout.pdf`](https://yiqingxu.org/public/panel-lectures/handout/Xu_6synth_handout.pdf) (56 pp) | [`Xu_6synth.pdf`](https://yiqingxu.org/public/panel-lectures/animated/Xu_6synth.pdf) (184 pp) |
+| # | Lecture | Slides |
+|---|---|---|
+| 1 | The Parametric Approach | [`Xu_1parametric_handout.pdf`](https://yiqingxu.org/public/panel-lectures/handout/Xu_1parametric_handout.pdf) (52 pp) |
+| 2 | Difference-in-Differences | [`Xu_2did_handout.pdf`](https://yiqingxu.org/public/panel-lectures/handout/Xu_2did_handout.pdf) (47 pp) |
+| 3 | Factorial Difference-in-Differences | [`Xu_3fdid_handout.pdf`](https://yiqingxu.org/public/panel-lectures/handout/Xu_3fdid_handout.pdf) (39 pp) |
+| 4 | Two-Way Fixed Effects Revisited | [`Xu_4twfe_handout.pdf`](https://yiqingxu.org/public/panel-lectures/handout/Xu_4twfe_handout.pdf) (33 pp) |
+| 5 | Modern DID | [`Xu_5modern_handout.pdf`](https://yiqingxu.org/public/panel-lectures/handout/Xu_5modern_handout.pdf) (48 pp) |
+| 6 | Synthetic Control and Extensions | [`Xu_6synth_handout.pdf`](https://yiqingxu.org/public/panel-lectures/handout/Xu_6synth_handout.pdf) (56 pp) |
 
-Handouts have one page per slide. The animated versions show each slide's reveals step by
-step, one page per step, for presenting.
+The slides are released as handouts, one page per slide. To present with the step-by-step
+reveals, build the animated version from the source (`make animated`, below).
 
 **The arc.** Lectures 1 and 2 cover the parametric panel toolkit and the canonical
 difference-in-differences design. Lecture 3 extends that design to events that affect
