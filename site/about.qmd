@@ -1,0 +1,36 @@
+---
+title: "About"
+---
+
+The lectures are by [Yiqing Xu](https://yiqingxu.org), Department of Political Science, Stanford
+University. Version 1.0.0 was released in September 2026.
+
+## Credits
+
+Much of the material builds on joint work and on colleagues' slides.
+
+- Lecture 3 follows Xu, Zhao, and Ding (2026), with the application from Cao, Xu, and Zhang
+  (2022, *Journal of Development Economics*) and the `fdid` R package.
+- Lectures 4 and 5 draw on the reanalysis study with Albert Chiu, Xingchen Lan, and Ziyi Liu
+  (Chiu, Lan, Liu, and Xu 2026). The replication figures in Lecture 5 come from that project.
+- Lectures 1 and 2 build on teaching slides by Jens Hainmueller, as noted on their reference
+  slides.
+- Lecture 6 uses Luke Sanford's Benin land-titling example and, on the synthetic
+  difference-in-differences slides, figures from the authors' slides (Arkhangelsky, Athey,
+  Hirshberg, Imbens, and Wager). Both are credited on the slides.
+
+## Related papers
+
+- Xu, Yiqing. 2017. "Generalized Synthetic Control Method: Causal Inference with Interactive Fixed
+  Effects Models." *Political Analysis* 25 (1): 57--76.
+- Xu, Yiqing. 2023. "Causal Inference with Time-Series Cross-Sectional Data: A Reflection." In
+  *The Oxford Handbook of Engaged Methodological Pluralism in Political Science*, 353--374. Oxford
+  University Press.
+- Liu, Licheng, Ye Wang, and Yiqing Xu. 2024. "A Practical Guide to Counterfactual Estimators for
+  Causal Inference with Time-Series Cross-Sectional Data." *American Journal of Political Science*
+  68 (1): 160--176.
+- Chiu, Albert, Xingchen Lan, Ziyi Liu, and Yiqing Xu. 2026. "Causal Panel Analysis under Parallel
+  Trends: Lessons from a Large Reanalysis Study." *American Political Science Review* 120 (1):
+  245--266.
+- Xu, Yiqing, Anqi Zhao, and Peng Ding. 2026. "Factorial Difference-in-Differences." *Journal of
+  the American Statistical Association* 121 (554): 963--975.

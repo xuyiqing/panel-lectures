@@ -1,0 +1,40 @@
+---
+title: "Teaching with the slides"
+---
+
+You are welcome to teach with these slides, in whole or in part, and to adapt them for your own
+course.
+
+## License
+
+- The slides, their LaTeX sources, and the author's own figures are licensed under
+  [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). You may copy, adapt and share them,
+  with credit.
+- The R scripts and other code are licensed under the
+  [MIT License](https://github.com/xuyiqing/panel-lectures/blob/main/LICENSE-CODE).
+- A few figures come from other people's papers or slides. They are credited on their slides,
+  listed in [SOURCES.md](https://github.com/xuyiqing/panel-lectures/blob/main/SOURCES.md), and
+  remain under their owners' terms.
+
+## Building and adapting the slides
+
+The [repository](https://github.com/xuyiqing/panel-lectures) has the LaTeX Beamer source of every
+deck, every figure, and the R scripts that redraw the figures from data or by simulation. All
+references sit in one file, `references.bib`, so each deck's reference list is rebuilt from it.
+With TeX Live 2023 or later, `make` builds the six handouts and `make animated` the versions with
+animations. The [README](https://github.com/xuyiqing/panel-lectures#readme) has the details, and
+[SOURCES.md](https://github.com/xuyiqing/panel-lectures/blob/main/SOURCES.md) records where every
+figure comes from.
+
+All six decks share one look, set in `common/`. To change the colors of every deck, edit the four
+colors at the top of `common/theme.tex`.
+
+## Citing the lectures
+
+Xu, Yiqing. 2026. *Lectures on Causal Panel Analysis.* Lecture slides, version 1.0.0.
+<https://github.com/xuyiqing/panel-lectures>.
+
+## Corrections
+
+Comments and corrections are welcome as
+[issues](https://github.com/xuyiqing/panel-lectures/issues) or pull requests on GitHub.

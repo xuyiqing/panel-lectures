@@ -84,6 +84,8 @@ references.bib   every reference cited in the six decks
 02-did/          did.tex and figs/            05-modern/  modern.tex and figs/
 03-fdid/         fdid.tex and figs/           06-synth/   synth.tex, preamble.tex, figs/
 pdf/             built PDFs, handout/ and animated/ (not tracked; published to yiqingxu.org)
+site/            the course website's Quarto source; `quarto render` there writes it to docs/
+docs/            the rendered website, served by GitHub Pages
 scripts/         check_figures.py (missing or unused figures)
 SOURCES.md       provenance of every figure; data and scripts; what was left out
 ```
