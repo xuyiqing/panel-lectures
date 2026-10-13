@@ -1,6 +1,6 @@
 ---
 title: "Lectures on Causal Panel Analysis"
-subtitle: "Six lectures by Yiqing Xu, Stanford University"
+subtitle: "Yiqing Xu, Stanford University"
 ---
 
 Slides for six lectures of 100 to 120 minutes each on causal inference with panel data. The
