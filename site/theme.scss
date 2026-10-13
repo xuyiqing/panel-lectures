@@ -1,11 +1,15 @@
 /*-- scss:defaults --*/
-// The decks' palette (common/theme.tex): SlideRed, SlideInk, SlideBlue.
-$primary: #9E1B32;
-$body-color: #252A34;
-$link-color: #2F6B9A;
-$navbar-bg: #9E1B32;
+// Colors of yiqingxu.org: sky blue #0089ff for links and accents, dark ink for text and headings.
+$primary: #0089ff;
+$body-color: #232b34;
+$headings-color: #001527;
+$link-color: #0089ff;
+$navbar-bg: #ffffff;
+$navbar-fg: #232b34;
+$navbar-hl: #0089ff;
 $font-size-root: 17px;
 
 /*-- scss:rules --*/
+.navbar { border-bottom: 1px solid #e6e8eb; }
 table { font-size: 0.95rem; }
 .lead-note { color: #5a5f6a; }
