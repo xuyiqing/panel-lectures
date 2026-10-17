@@ -27,5 +27,6 @@ website:
 format:
   html:
     theme: [cosmo, theme.scss]
+    include-after-body: newtab.html
     toc: false
     page-layout: article
