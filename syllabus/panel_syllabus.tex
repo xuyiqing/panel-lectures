@@ -1,0 +1,103 @@
+% Syllabus for the short course. Readings come from ../references.bib (the decks' bibliography),
+% so a correction there reaches the syllabus on the next build: latexmk -pdf panel_syllabus.tex
+\documentclass[11pt]{article}
+\usepackage[hmargin=1in,vmargin=0.75in]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{microtype}
+\usepackage{xcolor}
+\usepackage{enumitem}
+\usepackage{titlesec}
+\usepackage{needspace}
+\usepackage[authordate,backend=biber,maxbibnames=10,compresspages=true,dashed=false,doi=false,url=false,isbn=false]{biblatex-chicago}
+\addbibresource{../references.bib}
+\definecolor{Deep}{HTML}{0B4F6C}
+\definecolor{LinkNavy}{HTML}{002B55}
+\usepackage[colorlinks=true,linkcolor=LinkNavy,urlcolor=LinkNavy,citecolor=LinkNavy,
+  pdftitle={Causal Inference with Panel Data: Syllabus},pdfauthor={Yiqing Xu}]{hyperref}
+\titleformat{\section}{\large\bfseries\color{Deep}}{}{0pt}{}
+\titlespacing*{\section}{0pt}{14pt}{4pt}
+\titleformat{\subsection}{\Needspace{8\baselineskip}\normalsize\bfseries\color{Deep}}{}{0pt}{}
+\titlespacing*{\subsection}{0pt}{8pt}{1pt}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{5pt}
+\setlist{itemsep=1pt,topsep=2pt}
+\setlength{\bibitemsep}{1pt}
+\renewcommand*{\bibfont}{\small}
+\DeclareBibliographyCategory{core}
+\addtocategory{core}{stock2007introduction,hainmueller2019direct,card1994minimum,
+  abadie2005semiparametric,xu2026factorial,imai2021use,goodman2021difference,chiu2026causal,
+  liu2024practical,abadie2010synthetic,xu2017generalized}
+% One lecture's readings: core first, then further.
+\newcommand{\readings}[1]{%
+  \begin{refsection}\nocite{#1}%
+  \printbibliography[heading=subbibliography,title={Core readings},category=core]%
+  \printbibliography[heading=subbibliography,title={Further readings},notcategory=core]%
+  \end{refsection}}
+\defbibheading{subbibliography}[]{\par\Needspace{3\baselineskip}\vspace{3pt}\textit{#1}\par}
+\defbibenvironment{bibliography}
+  {\list{}{\setlength{\leftmargin}{\bibhang}\setlength{\itemindent}{-\leftmargin}%
+    \setlength{\itemsep}{\bibitemsep}\setlength{\parsep}{\bibparsep}%
+    \setlength{\topsep}{0pt}\setlength{\partopsep}{0pt}}}
+  {\endlist}{\item}
+
+\begin{document}
+
+\begin{center}
+{\LARGE\bfseries\color{Deep} Causal Inference with Panel Data}\\[4pt]
+{\large A short course in six lectures}\\[8pt]
+Yiqing Xu, Stanford University\\
+First taught at Waseda University, 2026
+\end{center}
+
+\section*{Overview}
+
+Panel data are the most common basis for causal claims in the social sciences. For decades the default analysis was a two-way fixed effects regression. Over the past ten years that default has been challenged, and dozens of alternative estimators have appeared. This short course works through the change, from the classical models to the methods now in use.
+
+The first half covers the parametric panel models and what their assumptions require, then difference-in-differences (DID) and factorial DID as distinctive research designs. It closes with the result that two-way fixed effects recovers a weighted average of treatment effects whose weights can turn negative when units are treated at different times, as well as other pathologies. The second half covers the responses: heterogeneity-robust DID estimators, the synthetic control method and latent factor models, as well as doubly and triply robust methods.
+
+Each lecture pairs the identification argument with applied examples and diagnostics: what to plot, what to test, and what to report when the assumptions are in doubt.
+
+\section*{Audience and prerequisites}
+
+The course is for applied researchers and graduate students in the social sciences who work with panel data. Participants should have taken a graduate or advanced-undergraduate regression course. Prior experience with R is helpful but not required. Each method is introduced through an example and a picture, and formulas appear only where the ideas need them.
+
+\section*{Format and materials}
+
+Six lectures of 100 to 120 minutes each. The slides, their LaTeX sources, the R scripts that regenerate every figure, and the bibliography are free to use and adapt:
+\begin{itemize}
+\item Course site: \url{https://xuyiqing.github.io/panel-lectures/}
+\item Source repository: \url{https://github.com/xuyiqing/panel-lectures}
+\end{itemize}
+Implementation is in R, mainly with \texttt{panelView}, \texttt{fect} and \texttt{fdid}; other packages (\texttt{did}, \texttt{bacondecomp}, \texttt{augsynth}, \texttt{gsynth}) appear where a lecture uses them.
+
+For an overview of the field and of the approach taken here, see \textcite{xu2023causal}.
+
+\clearpage
+\section*{Schedule and readings}
+
+\subsection*{Lecture 1. The parametric approach}
+Panel setup and unobserved confounding; fixed effects regression; modeling time; modeling dynamic and heterogeneous effects.
+\readings{stock2007introduction,hainmueller2019direct,holland1986statistics}
+
+\subsection*{Lecture 2. Difference-in-differences}
+Motivating examples; setup and identification; estimation; threats to validity.
+\readings{card1994minimum,abadie2005semiparametric,roth2023when}
+
+\subsection*{Lecture 3. Factorial difference-in-differences}
+Events that affect every unit; setup and estimands; identification; extensions; application to clans and the Great Famine.
+\readings{xu2026factorial,cao2022clans,vanderweele2009distinction}
+
+\subsection*{Lecture 4. Two-way fixed effects revisited}
+Two-way fixed effects and its assumptions; the design problem; parallel trends violations; the weighting problem under heterogeneous effects.
+\readings{imai2021use,goodman2021difference,dechaisemartin2020twoway}
+
+\subsection*{Lecture 5. Modern difference-in-differences}
+Heterogeneity-robust estimators; diagnostics; lessons from 49 reanalyses of published studies.
+\readings{chiu2026causal,liu2024practical,callaway2021difference,sun2021estimating,borusyak2021revisiting,rambachan2023more}
+
+\subsection*{Lecture 6. Synthetic control and extensions}
+The synthetic control method; the latent factor approach; doubly and triply robust methods.
+\readings{abadie2010synthetic,xu2017generalized,athey2021matrix,arkhangelsky2021synthetic,benmichael2021augmented,athey2026triply}
+
+\end{document}
