@@ -6,7 +6,7 @@ project:
 
 website:
   title: "Lectures on Causal Panel Analysis"
-  site-url: https://xuyiqing.github.io/panel-lectures/
+  site-url: https://teaching.yiqingxu.org/panel-lectures/
   repo-url: https://github.com/xuyiqing/panel-lectures
   navbar:
     left:
